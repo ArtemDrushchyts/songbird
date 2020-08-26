@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0;
+
+  .page-item {
+    flex: auto;
+    text-align: center;
+    color: #fff;
+    background-color: #008966;
+    border-color: #007c5d;
+    padding: 0.5rem 0.75rem;
+    line-height: 1.25;
+  }
+  .active {
+    background-color: #00bc8c;
+    border-color: #007c5d;
+  }
+}
