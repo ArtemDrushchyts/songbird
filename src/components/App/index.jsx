@@ -3,6 +3,7 @@ import './index.scss';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { update } from '../../containers/App/actions';
 import Header from '../Header';
+import Question from '../Question';
 
 const App = () =>
 // const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const App = () =>
   (
     <div className="app">
       <Header />
+      <Question />
       {/* hello
       {' '}
       {game}

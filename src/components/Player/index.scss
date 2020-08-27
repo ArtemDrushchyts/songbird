@@ -1,0 +1,53 @@
+.rhap_container {
+  background-color: transparent;
+}
+
+.rhap_controls-section {
+  margin-right: 2%;
+  flex: unset;
+}
+
+.rhap_time {
+  margin-right: 2%;
+}
+
+.rhap_rewind-button,
+.rhap_forward-button {
+  display: none;
+}
+
+.rhap_time {
+  color: white;
+}
+
+.rhap_play-pause-button {
+  svg path {
+    fill: #008966
+  }
+}
+
+.rhap_play-pause-button:active,
+.rhap_play-pause-button:focus {
+  outline: transparent;
+}
+
+.info-panel {
+  .rhap_container {
+    padding: 0;
+  }
+
+  .rhap_time,
+  .rhap_volume-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .rhap_container {
+    padding: 0;
+  }
+
+  .rhap_volume-container {
+    display: none;
+  }
+}
