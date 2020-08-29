@@ -4,6 +4,8 @@ import './index.scss';
 // import { update } from '../../containers/App/actions';
 import Header from '../Header';
 import Question from '../Question';
+import Game from '../Game';
+import Next from '../Next';
 
 const App = () =>
 // const dispatch = useDispatch();
@@ -13,6 +15,8 @@ const App = () =>
     <div className="app">
       <Header />
       <Question />
+      <Game />
+      <Next />
       {/* hello
       {' '}
       {game}

@@ -5,16 +5,8 @@ import './index.scss';
 
 const Player = ({ src, from }) => (
   <AudioPlayer
+    showJumpControls={false}
     src={src}
-    layout="horizontal-reverse"
-    customProgressBarSection={[
-      RHAP_UI.CURRENT_TIME,
-      RHAP_UI.PROGRESS_BAR,
-      RHAP_UI.DURATION,
-      RHAP_UI.VOLUME,
-    ]}
-    customAdditionalControls={[]}
-    customVolumeControls={[]}
     className="audio-player"
     autoPlayAfterSrcChange={false}
     // onPlay={() => {
