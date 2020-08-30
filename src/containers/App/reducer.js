@@ -1,6 +1,7 @@
 import {
-  ACTIVE_ANSWER, CORRECT_ANSWER, MISTAKE_ANSWER,
+  ACTIVE_ANSWER, CORRECT_ANSWER, MISTAKE_ANSWER, ADD_MISTAKE,
   RIGHT_ANSWER, NEXT_ROUND, UPDATE_DATA_ROUND, GAME_OVER, RESET_GAME,
+  UPDATE_SCORE, UPDATE_MITAKE_ROUND,
 } from './constans';
 import data from '../../assets/data/index';
 
@@ -62,6 +63,12 @@ const helloReducer = (state = initialState, action) => {
         isRightAnswer: false,
         isGameEnding: false,
       };
+    case ADD_MISTAKE:
+      return { ...state, roundMistakes: state.roundMistakes + 1 };
+    case UPDATE_SCORE:
+      return { ...state, gameScore: state.gameScore + action.payload };
+    case UPDATE_MITAKE_ROUND:
+      return { ...state, roundMistakes: 0 };
     default: return state;
   }
 };

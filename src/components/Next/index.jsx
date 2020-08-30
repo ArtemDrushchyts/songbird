@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  nextRound, rightAnswer, updateDataRound, gameOver,
+  nextRound, rightAnswer, updateDataRound, gameOver, updateMistakeRound,
 } from '../../containers/App/actions';
 import './index.scss';
 
@@ -15,6 +15,7 @@ const Next = () => {
       dispatch(nextRound());
       dispatch(updateDataRound(round));
       dispatch(rightAnswer(false));
+      dispatch(updateMistakeRound());
     } else {
       dispatch(gameOver(true));
     }

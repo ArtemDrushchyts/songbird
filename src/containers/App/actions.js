@@ -1,6 +1,7 @@
 import {
   ACTIVE_ANSWER, CORRECT_ANSWER, MISTAKE_ANSWER, RIGHT_ANSWER,
-  NEXT_ROUND, UPDATE_DATA_ROUND, GAME_OVER, RESET_GAME,
+  NEXT_ROUND, UPDATE_DATA_ROUND, GAME_OVER, RESET_GAME, ADD_MISTAKE,
+  UPDATE_SCORE, UPDATE_MITAKE_ROUND,
 } from './constans';
 
 export const updateActiveAnswer = (answer) => ({
@@ -39,4 +40,17 @@ export const gameOver = (boolean) => ({
 
 export const resetGame = () => ({
   type: RESET_GAME,
+});
+
+export const mistakeAdd = () => ({
+  type: ADD_MISTAKE,
+});
+
+export const updateScore = (num) => ({
+  type: UPDATE_SCORE,
+  payload: num,
+});
+
+export const updateMistakeRound = () => ({
+  type: UPDATE_MITAKE_ROUND,
 });

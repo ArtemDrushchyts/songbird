@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  updateActiveAnswer, correctAnswer, mistakeAnswer, rightAnswer,
+  updateActiveAnswer, correctAnswer, mistakeAnswer, rightAnswer, mistakeAdd, updateScore,
 } from '../../containers/App/actions';
 import './index.scss';
 // import audioError from '../../assets/audio/error.mp3';
@@ -13,16 +13,22 @@ const Answers = () => {
   const roundData = useSelector((state) => state.app.roundData);
   const roundWord = useSelector((state) => state.app.roundWord);
   const isRightAnswer = useSelector((state) => state.app.isRightAnswer);
+  const roundMistakes = useSelector((state) => state.app.roundMistakes);
 
   const checkAnswer = (answer) => {
     dispatch(updateActiveAnswer(answer));
     if (answer.name === roundWord.name) {
       !isRightAnswer && dispatch(correctAnswer(answer.name));
       dispatch(rightAnswer(true));
+      dispatch(updateScore(5 - roundMistakes));
       // const audio = new Audio(audioSuccess);
       // audio.play();
     } else {
+      if (!answer.mistake) {
+        dispatch(mistakeAdd());
+      }
       !isRightAnswer && dispatch(mistakeAnswer(answer.name));
+
       // const audio = new Audio(audioError);
       // audio.play();
     }
