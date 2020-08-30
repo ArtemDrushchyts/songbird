@@ -1,19 +1,43 @@
 import React from 'react';
+import classNames from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateActiveAnswer } from '../../containers/App/actions';
+import {
+  updateActiveAnswer, correctAnswer, mistakeAnswer, rightAnswer,
+} from '../../containers/App/actions';
 import './index.scss';
+// import audioError from '../../assets/audio/error.mp3';
+// import audioSuccess from '../../assets/audio/succes.mp3';
 
 const Answers = () => {
   const dispatch = useDispatch();
-  const round = useSelector((state) => state.app.round);
-  const data = useSelector((state) => state.app.data);
+  const roundData = useSelector((state) => state.app.roundData);
   const roundWord = useSelector((state) => state.app.roundWord);
+  const isRightAnswer = useSelector((state) => state.app.isRightAnswer);
+
+  const checkAnswer = (answer) => {
+    dispatch(updateActiveAnswer(answer));
+    if (answer.name === roundWord.name) {
+      !isRightAnswer && dispatch(correctAnswer(answer.name));
+      dispatch(rightAnswer(true));
+      // const audio = new Audio(audioSuccess);
+      // audio.play();
+    } else {
+      !isRightAnswer && dispatch(mistakeAnswer(answer.name));
+      // const audio = new Audio(audioError);
+      // audio.play();
+    }
+  };
 
   return (
     <div className="answer">
       <ul className="answer-list">
-        {data[round].map((el) => (
-          <li className="answer-list__item" key={el.name} onClick={() => dispatch(updateActiveAnswer(el))}>
+        {roundData.map((el) => (
+          <li
+            className={classNames('answer-list__item',
+              { 'answer-list__item--error': el.mistake, 'answer-list__item--success': el.win })}
+            key={el.name}
+            onClick={() => checkAnswer(el)}
+          >
             <span className="mark" />
             <span>{el.name}</span>
           </li>
@@ -22,4 +46,5 @@ const Answers = () => {
     </div>
   );
 };
+
 export default Answers;

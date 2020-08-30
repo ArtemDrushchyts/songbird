@@ -8,6 +8,6 @@ const Game = () => (
     <Answers />
     <Description />
   </div>
-)
+);
 
 export default Game;

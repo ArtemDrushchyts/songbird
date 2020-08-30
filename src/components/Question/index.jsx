@@ -10,7 +10,7 @@ const Question = () => {
 
   return (
     <div className="random-bird">
-      <img className="bird-img" src={ isRightAnswer ? roundWord.image : bird } alt={roundWord.name} />
+      <img className="bird-img" src={isRightAnswer ? roundWord.image : bird} alt={roundWord.name} />
       <div className="bird-content">
         <h3 className="bird-title">{ isRightAnswer ? roundWord.name : '******'}</h3>
         <div className="audio-player">

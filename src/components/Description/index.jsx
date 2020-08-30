@@ -5,7 +5,6 @@ import Player from '../Player';
 
 const Description = () => {
   const activeAnswer = useSelector((state) => state.app.activeAnswer);
-  console.log(activeAnswer);
   return (
     <div className="description">
       {activeAnswer
