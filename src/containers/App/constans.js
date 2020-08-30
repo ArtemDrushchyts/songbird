@@ -1,1 +1,1 @@
-export const HELLO = 'HELLO';
+export const ACTIVE_ANSWER = 'ACTIVE_ANSWER';

@@ -1,21 +1,24 @@
 import React from 'react';
 import './index.scss';
+import { useSelector } from 'react-redux';
 import Player from '../Player';
-import data from '../../assets/data/index';
+import bird from '../../assets/image/bird.jpg';
 
 const Question = () => {
-  console.log(data[0][0].audio);
+  const roundWord = useSelector((state) => state.app.roundWord);
+  const isRightAnswer = useSelector((state) => state.app.isRightAnswer);
+
   return (
     <div className="random-bird">
-    <img className="bird-img" src="" alt=""/>
-    <div className="bird-content">
-      <h3 className="bird-title">Cорока</h3>
-      <div className="audio-player">
-        <Player src={data[0][0].audio}/>
+      <img className="bird-img" src={ isRightAnswer ? roundWord.image : bird } alt={roundWord.name} />
+      <div className="bird-content">
+        <h3 className="bird-title">{ isRightAnswer ? roundWord.name : '******'}</h3>
+        <div className="audio-player">
+          <Player src={roundWord.audio} />
+        </div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
 export default Question;

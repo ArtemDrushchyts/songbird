@@ -1,6 +1,6 @@
-import { HELLO } from './constans';
+import { ACTIVE_ANSWER } from './constans';
 
-export const update = (num) => ({
-  type: HELLO,
-  payload: num,
+export const updateActiveAnswer = (answer) => ({
+  type: ACTIVE_ANSWER,
+  payload: answer,
 });

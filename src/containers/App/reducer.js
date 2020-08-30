@@ -1,13 +1,21 @@
-import { HELLO } from './constans';
+import { ACTIVE_ANSWER } from './constans';
+import data from '../../assets/data/index';
 
 const initialState = {
-  group: 1,
+  data: [...data],
+  round: 0,
+  gameScore: 0,
+  roundMistakes: 0,
+  roundWord: data[0][Math.floor(Math.random() * data.length)],
+  activeAnswer: null,
+  isRightAnswer: false,
+  isGameEnding: false,
 };
 
 const helloReducer = (state = initialState, action) => {
   switch (action.type) {
-    case HELLO:
-      return { ...state, group: action.payload };
+    case ACTIVE_ANSWER:
+      return { ...state, activeAnswer: action.payload };
     default: return state;
   }
 };
