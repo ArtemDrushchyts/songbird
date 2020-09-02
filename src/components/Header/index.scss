@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-top: .5rem;
+  width: 100%;
+
+  .top-panel {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      width: 200px;
+      height: 55px;
+      background-image: url('../../assets/image/logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .score {
+      font-size: 1.2rem;
+      color: white;
+    }
+  }
+}

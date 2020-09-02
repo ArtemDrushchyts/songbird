@@ -1,0 +1,11 @@
+export const ACTIVE_ANSWER = 'ACTIVE_ANSWER';
+export const CORRECT_ANSWER = 'CORRECT_ANSWER';
+export const MISTAKE_ANSWER = 'MISTAKE_ANSWER';
+export const RIGHT_ANSWER = 'RIGHT_ANSWER';
+export const NEXT_ROUND = 'NEXT_ROUND';
+export const UPDATE_DATA_ROUND = 'UPDATE_DATA_ROUND';
+export const GAME_OVER = 'GAME_OVER';
+export const RESET_GAME = 'RESET_GAME';
+export const ADD_MISTAKE = 'ADD_MISTAKE';
+export const UPDATE_SCORE = 'UPDATE_SCORE';
+export const UPDATE_MITAKE_ROUND = 'UPDATE_MITAKE_ROUND';
